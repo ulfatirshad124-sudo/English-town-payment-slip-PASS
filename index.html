@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Town | Payment Slip</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <div class="logo-wrap"><img src="logo.png" alt="English Town logo" class="school-logo"></div>
+      <h1>ENGLISH TOWN</h1>
+      <p class="subtitle">Language &amp; Computer Centre</p>
+      <form id="loginForm" class="auth-form">
+        <label for="loginUsername">Username</label>
+        <input id="loginUsername" autocomplete="username" required placeholder="Enter username">
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Enter password">
+        <button type="submit" class="primary-btn">Login</button>
+      </form>
+      <p id="authMessage" class="auth-message" role="status"></p>
+      <button type="button" id="soundToggle" class="sound-toggle" aria-pressed="true">🔊 Sound: On</button>
+    </div>
+  </section>
+
+  <main id="app" class="app hidden">
+    <div class="toolbar">
+      <span>Payment Slip Manager</span>
+      <div class="toolbar-right"><span id="welcomeUser"></span><button type="button" id="soundToggleApp" class="small-btn" aria-pressed="true">🔊 Sound</button><button type="button" id="logoutBtn" class="small-btn">Logout</button></div>
+    </div>
+
+    <article class="receipt">
+      <header class="receipt-header">
+        <img src="logo.png" alt="English Town logo" class="school-logo receipt-logo">
+        <div class="brand"><h2>ENGLISH TOWN</h2><p>Language &amp; Computer Centre</p></div>
+      </header>
+      <div class="contact">
+        F-410 Street # 25, Sector 11½, Orangi Town, Karachi<br>
+        Cell: 0345-270294, 0346-3181706<br>
+        Email: r.sirriaz@gmail.com
+      </div>
+      <div class="slip-title">OFFICIAL PAYMENT SLIP</div>
+
+      <h3>STUDENT INFORMATION</h3>
+      <div class="fields">
+        <div class="field"><label for="slipNo">Slip #</label><input id="slipNo" placeholder="001"></div>
+        <div class="field"><label for="date">Date</label><input id="date" type="date"></div>
+        <div class="field full"><label for="studentName">Student Name</label><input id="studentName" placeholder="Student full name"></div>
+        <div class="field full"><label for="fatherName">Father Name</label><input id="fatherName" placeholder="Father's full name"></div>
+        <div class="field"><label for="faculty">Faculty / Course</label>
+          <select id="faculty"><option value="">Select course</option><option>English Language</option><option>Spoken English</option><option>Computer Course</option><option>MS Office</option><option>Graphic Designing</option><option>Other</option></select>
+        </div>
+        <div class="field"><label for="timing">Class Timing</label><input id="timing" placeholder="4:00 PM - 6:00 PM"></div>
+        <div class="field full"><label for="month">Fee Month</label>
+          <select id="month"><option value="">Select month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select>
+        </div>
+      </div>
+
+      <h3>FEE DETAILS</h3>
+      <table>
+        <thead><tr><th>Description</th><th class="amount">Amount (Rs.)</th></tr></thead>
+        <tbody>
+          <tr><td>Registration Fee</td><td><input id="registration" class="money" type="number" min="0" step="any" value="0"></td></tr>
+          <tr><td>Monthly Fee</td><td><input id="monthly" class="money" type="number" min="0" step="any" value="0"></td></tr>
+          <tr><td>Balance Fee</td><td><input id="balance" class="money" type="number" min="0" step="any" value="0"></td></tr>
+        </tbody>
+        <tfoot><tr><th>TOTAL FEE</th><th class="amount">Rs. <span id="total">0</span></th></tr></tfoot>
+      </table>
+
+      <div class="signatures"><div>_________________<br>Receiver's Signature</div><div>_________________<br>Accountant's Signature</div></div>
+      <footer>Thank you for choosing English Town!<br><strong>Official Payment Receipt</strong></footer>
+    </article>
+
+    <div class="actions">
+      <button id="printBtn" class="primary-btn">Print Slip</button>
+      <button id="clearBtn" class="secondary-btn">Clear Form</button>
+      <button id="cloudBtn" class="secondary-btn">Copy All The Form</button>
+    </div>
+    <p id="status" class="status" role="status"></p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
